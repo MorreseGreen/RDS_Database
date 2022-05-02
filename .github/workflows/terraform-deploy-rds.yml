@@ -19,7 +19,7 @@ jobs:
         with:
           role-to-assume: arn:aws:iam::342623272824:role/github-oidc
           aws-region: us-east-1
-          role-session-name: GithubLandingZoneDeployment
+          role-session-name: GithubRdsDatabaseDeployment
 
       - name: Set up Terraform
         uses: hashicorp/setup-terraform@v1
@@ -35,4 +35,4 @@ jobs:
         run: terraform plan
 
       - name: Apply infra
-        run: terraform apply -auto-approven
+        run: terraform apply -auto-approve
