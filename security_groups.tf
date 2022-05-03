@@ -8,7 +8,7 @@ resource "aws_security_group" "database-security-group" {
     from_port       = 3306
     to_port         = 3306
     protocol        = "tcp"
-    #security_groups = [aws_security_group.app_sg.id]
+    security_groups = ["sg-0a48541e4f4569c5b"]
   }
 
   # OUTBOUD CONNECTIONS
@@ -20,5 +20,3 @@ resource "aws_security_group" "database-security-group" {
     cidr_blocks = ["0.0.0.0/0"]
   }
 }
-
-
