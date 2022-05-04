@@ -20,12 +20,12 @@ data "aws_subnet" "data-b" {
 }
 
 data "aws_secretsmanager_secret" "secrets" {
-  arn = "arn:aws:secretsmanager:us-east-1:342623272824:secret:wordpress_creds-pOsVNE"
+  arn = "arn:aws:secretsmanager:us-east-1:342623272824:secret:wordpress_creds-pOsVNE" 
 }
 data "aws_secretsmanager_secret_version" "current" {
   secret_id = data.aws_secretsmanager_secret.secrets.id
 }
 
-output "sensitive_example_hash" {
-  value = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.current.secret_string))
-}
+#output "aws_secretsmanager_secret" {
+  #value = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.current.secret_string)) ["wordpress_password"]
+#}
