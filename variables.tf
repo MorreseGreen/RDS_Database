@@ -10,3 +10,10 @@ variable "data_a_subnet_name" {
 variable "data_b_subnet_name" {
   type = string
 }
+
+# variable "username" {
+#   type = string
+# }
+# variable "password" {
+#   type = string
+# }
