@@ -29,5 +29,5 @@ data "aws_secretsmanager_secret_version" "current" {
 
 
 #output "aws_secretsmanager_secret" {
-  #value = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.current.secret_string)) ["wordpress_password"]
+#value = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.current.secret_string)) ["wordpress_password"]
 #}
