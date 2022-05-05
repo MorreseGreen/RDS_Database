@@ -15,6 +15,8 @@ resource "aws_db_instance" "database-instance" {
   instance_class          = "db.t3.micro"
   identifier              = "wordpress"
   db_name                 = "wordpress"
+  username                = "matrix"
+  password                = data.aws_secretsmanager_secret.secrets.id
   multi_az                = true
   db_subnet_group_name    = aws_db_subnet_group.database-subnet-group.name
   vpc_security_group_ids  = [aws_security_group.database-security-group.id]
