@@ -16,7 +16,7 @@ resource "aws_db_instance" "database-instance" {
   identifier              = "wordpress"
   db_name                 = "wordpress"
   username                = "matrix"
-  password                = data.aws_secretsmanager_secret.secrets.id
+  password                = jsondecode(nonsensitive(data.aws_secretsmanager_secret_version.current.secret_string))["wordpress_password"]
   multi_az                = true
   db_subnet_group_name    = aws_db_subnet_group.database-subnet-group.name
   vpc_security_group_ids  = [aws_security_group.database-security-group.id]

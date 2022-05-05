@@ -3,7 +3,7 @@ resource "aws_security_group" "database-security-group" {
   description = "Allow access to DB instance"
   vpc_id      = data.aws_vpc.main_vpc.id
 
-  ingress {<<<<<<< main
+  ingress {
     description     = "Allow EC2 instance to access RDS Database"
     from_port       = 3306
     to_port         = 3306
